@@ -1,0 +1,1 @@
+node index.js -f inputdata.json --index test --type test

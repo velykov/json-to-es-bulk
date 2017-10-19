@@ -78,9 +78,9 @@ stream.once('open', function(fd) {
 
     _.each(inputJson, function(record){
 
-        var recordPrologue = { index: { '_index': argv.index, '_id': record.id, '_type': argv.type } };
+        var recordPrologue = { index: { '_index': argv.index, '_id': record._id, '_type': argv.type } };
         stream.write(JSON.stringify(recordPrologue) + '\n');
-        stream.write(JSON.stringify(record) + '\n');
+        stream.write(JSON.stringify(record._source) + '\n');
 
         //process.stdout.write('.');
 
